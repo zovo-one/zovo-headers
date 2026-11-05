@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="actionTitle">HTTP Header Rules</title>
+    <link rel="stylesheet" href="styles/http36b6-base.css" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body class="http36b6 http36b6-popup">
+    <header class="http36b6-header http36b6-popup__header">
+      <img class="http36b6-header__icon" src="icons/48.png" alt="" width="28" height="28" />
+      <span class="http36b6-header__title" data-i18n="actionTitle">HTTP Header Rules</span>
+      <span id="http36b6-tier" class="http36b6-badge http36b6-badge--free" data-i18n="tierFree">Free</span>
+    </header>
+
+    <main class="http36b6-stack">
+      <section id="http36b6-list-view" aria-live="off">
+        <div class="http36b6-capline">
+          <span id="http36b6-cap-indicator" class="http36b6-cap-indicator" role="status">0 of 5 rules</span>
+          <span id="http36b6-overlap-flag" class="http36b6-overlap-flag" hidden data-i18n="overlapFlag">Overlap</span>
+        </div>
+
+        <div id="http36b6-rules" class="http36b6-rules"></div>
+
+        <div id="http36b6-empty" class="http36b6-empty" hidden>
+          <svg class="http36b6-empty__art" viewBox="0 0 96 96" fill="none" aria-hidden="true">
+            <rect x="14" y="12" width="68" height="72" rx="10" stroke="currentColor" stroke-width="4" opacity="0.25"/>
+            <path d="M28 38h26M28 38l-8 0M66 38l8 0" stroke="currentColor" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+            <path d="M60 32l12 6-12 6" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+            <path d="M28 58h26" stroke="currentColor" stroke-width="5" stroke-linecap="round" opacity="0.35"/>
+          </svg>
+          <p class="http36b6-empty__title" data-i18n="emptyTitle">No header rules yet</p>
+          <p class="http36b6-empty__text" data-i18n="emptyText">Set a header once. It holds on every request, every visit, until you say otherwise.</p>
+        </div>
+
+        <button
+          id="http36b6-add"
+          class="http36b6-btn http36b6-btn--primary http36b6-btn--block"
+          type="button"
+          aria-label="Add a header rule"
+          data-i18n-aria="addRuleAria"
+          data-i18n="addRule"
+        >
+          Add a header rule
+        </button>
+
+        <div id="http36b6-nudge" class="http36b6-upgrade-card" hidden>
+          <p class="http36b6-upgrade-card__title" data-i18n="nudgeTitle">All 5 free rules are live</p>
+          <p class="http36b6-upgrade-card__sub" data-i18n="nudgeSub">Pro lifts the cap so every project stays covered at once.</p>
+          <div class="http36b6-upgrade-card__actions">
+            <a
+              id="http36b6-nudge-link"
+              class="http36b6-btn http36b6-btn--pro"
+              href="https://zovo.one/pricing?utm_source=httpheadertool&amp;utm_medium=extension&amp;utm_campaign=upgrade&amp;utm_content=popup-nudge"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="See HTTP Header Rules Pro plans"
+              data-i18n-aria="upgradeLinkAria"
+              ><span data-i18n="upgradeLink">See plans</span></a
+            >
+            <button id="http36b6-nudge-later" class="http36b6-maybe" type="button" data-i18n="maybeLater">Maybe later</button>
+          </div>
+        </div>
+
+        <div class="http36b6-card http36b6-card--flush http36b6-license">
+          <div id="http36b6-license-form-wrap">
+            <label class="http36b6-label" for="http36b6-license-input" data-i18n="licenseLabel">Have a Pro key?</label>
+            <div class="http36b6-license__row">
+              <input
+                id="http36b6-license-input"
+                class="http36b6-input http36b6-mono"
+                type="text"
+                maxlength="24"
+                placeholder="ZOVO-XXXX-XXXX-XXXX-XXXX"
+                autocomplete="off"
+                spellcheck="false"
+                aria-label="Pro license key"
+                data-i18n-aria="licenseInputAria"
+              />
+              <button
+                id="http36b6-license-activate"
+                class="http36b6-btn http36b6-btn--secondary"
+                type="button"
+                aria-label="Activate Pro license"
+                data-i18n-aria="licenseActivateAria"
+                data-i18n="licenseActivate"
+              >
+                Activate
+              </button>
+            </div>
+            <p id="http36b6-license-msg" class="http36b6-hint" role="status" aria-live="polite"></p>
+          </div>
+          <div id="http36b6-license-active" class="http36b6-license__active" hidden>
+            <span class="http36b6-badge http36b6-badge--pro" data-i18n="proBadge">Pro</span>
+            <span class="http36b6-license__plan" id="http36b6-license-plan" data-i18n="licensePlanPro">Pro active. Thank you.</span>
+            <button id="http36b6-license-remove" class="http36b6-maybe" type="button" aria-label="Remove Pro license" data-i18n-aria="licenseRemoveAria" data-i18n="licenseRemove">
+              Remove
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="http36b6-form-view" hidden>
+        <p class="http36b6-form-title" id="http36b6-form-title" data-i18n="formTitleNew">New header rule</p>
+
+        <label class="http36b6-label" for="http36b6-f-name" data-i18n="fieldRuleName">Rule name</label>
+        <input id="http36b6-f-name" class="http36b6-input" type="text" maxlength="120" placeholder="Staging API headers" data-i18n-placeholder="fieldRuleNamePh" autocomplete="off" />
+
+        <label class="http36b6-label" for="http36b6-f-domain" data-i18n="fieldDomain">Site domain</label>
+        <input id="http36b6-f-domain" class="http36b6-input http36b6-mono" type="text" placeholder="example.com" autocomplete="off" spellcheck="false" />
+        <p class="http36b6-hint" id="http36b6-domain-hint" data-i18n="domainHint">Covers the domain and all its subdomains. Chrome asks for access to this site when you save. Nothing else is touched.</p>
+
+        <p class="http36b6-label http36b6-label--headers" data-i18n="fieldHeaders">Headers</p>
+        <div id="http36b6-header-rows"></div>
+        <button id="http36b6-add-header" class="http36b6-maybe http36b6-maybe--add" type="button" data-i18n="addHeaderRow">+ Add another header</button>
+
+        <p id="http36b6-form-error" class="http36b6-form-error" role="alert" hidden></p>
+
+        <div class="http36b6-form-actions">
+          <button id="http36b6-save" class="http36b6-btn http36b6-btn--primary" type="button" aria-label="Save rule and grant site access" data-i18n-aria="saveRuleAria" data-i18n="saveRule">Save rule</button>
+          <button id="http36b6-cancel" class="http36b6-btn http36b6-btn--ghost" type="button" data-i18n="cancel">Cancel</button>
+        </div>
+      </section>
+
+      <section id="http36b6-paywall-view" class="http36b6-paywall" hidden>
+        <p class="http36b6-paywall__eyebrow" data-i18n="paywallEyebrow">You hit the free limit</p>
+        <p class="http36b6-paywall__headline" data-i18n="paywallHeadline">Unlimited standing rules, live at once</p>
+        <ul class="http36b6-upgrade-card__list">
+          <li data-i18n="paywallLi1">More than 5 rules live at the same time</li>
+          <li data-i18n="paywallLi2">Every project and environment covered at once</li>
+          <li data-i18n="paywallLi3">No toggle-dance to squeeze under the cap</li>
+          <li data-i18n="paywallLi4">One payment unlocks this extension's Pro forever</li>
+        </ul>
+        <div class="http36b6-upgrade-card__versus">
+          <div class="http36b6-upgrade-card__vs-row" data-plan="free">
+            <span class="http36b6-badge http36b6-badge--free" data-i18n="tierFree">Free</span>
+            <span data-i18n="paywallFreeLine">5 active rules, full engine</span>
+          </div>
+          <div class="http36b6-upgrade-card__vs-row" data-plan="pro">
+            <span class="http36b6-badge http36b6-badge--pro" data-i18n="proBadge">Pro</span>
+            <span data-i18n="paywallProLine">Unlimited active rules</span>
+          </div>
+        </div>
+        <p class="http36b6-upgrade-card__price" data-i18n="upgradePrice">$99 lifetime, not a subscription</p>
+        <p class="http36b6-upgrade-card__guar" data-i18n="upgradeGuarantee">14-day money-back guarantee.</p>
+        <div class="http36b6-upgrade-card__actions">
+          <a
+            id="http36b6-paywall-link"
+            class="http36b6-btn http36b6-btn--pro"
+            href="https://zovo.one/pricing?utm_source=httpheadertool&amp;utm_medium=extension&amp;utm_campaign=upgrade&amp;utm_content=paywall"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Get HTTP Header Rules Pro"
+            data-i18n-aria="upgradeCtaAria"
+            ><span data-i18n="upgradeCta">Get Pro</span></a
+          >
+          <button id="http36b6-paywall-later" class="http36b6-maybe" type="button" data-i18n="maybeLater">Maybe later</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="http36b6-footer">
+      <a href="https://zovo.one" target="_blank" rel="noreferrer">zovo.one</a>
+      <a
+        id="http36b6-footer-pro"
+        class="http36b6-footer__pro"
+        href="https://zovo.one/pricing?utm_source=httpheadertool&amp;utm_medium=extension&amp;utm_campaign=upgrade&amp;utm_content=popup-footer"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Get HTTP Header Rules Pro"
+        data-i18n="footerGetPro"
+        data-i18n-aria="footerGetProAria"
+        >Get Pro</a
+      >
+      <span class="http36b6-mono">v1.0.1</span>
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

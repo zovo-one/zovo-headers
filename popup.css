@@ -1,0 +1,429 @@
+/* popup.css — popup-specific layout on top of http36b6-base.css tokens. */
+
+/* The hidden attribute must always win over component display rules
+   (flex/grid classes would otherwise keep "hidden" sections visible). */
+[hidden] {
+  display: none !important;
+}
+
+.http36b6-popup__header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.http36b6-capline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.http36b6-cap-indicator {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--http36b6-text-muted, #5b6472);
+  background: var(--http36b6-surface-2, #f1f4f9);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+.http36b6-cap-indicator[data-full='true'] {
+  color: var(--http36b6-warning-text, #8a5a00);
+  background: var(--http36b6-warning-bg, #fff3d6);
+}
+
+.http36b6-overlap-flag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--http36b6-warning-text, #8a5a00);
+  background: var(--http36b6-warning-bg, #fff3d6);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+/* ------------------------------------------------------------- rule cards */
+
+.http36b6-rules {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.http36b6-rule {
+  background: var(--http36b6-surface, #fff);
+  border: 1px solid var(--http36b6-border, #e2e8f0);
+  border-radius: 12px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.http36b6-rule[data-enabled='false'] {
+  opacity: 0.62;
+}
+
+.http36b6-rule__top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.http36b6-rule__name {
+  font-weight: 700;
+  font-size: 13px;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.http36b6-rule__domain {
+  font-size: 12px;
+  color: var(--http36b6-text-muted, #5b6472);
+}
+
+.http36b6-rule__headers {
+  font-size: 11.5px;
+  color: var(--http36b6-text-muted, #5b6472);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.http36b6-rule__chip {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10.5px;
+  background: var(--http36b6-surface-2, #f1f4f9);
+  border-radius: 6px;
+  padding: 2px 6px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.http36b6-rule__chip--resp {
+  background: var(--http36b6-primary-50);
+  color: var(--http36b6-primary-dark);
+}
+
+.http36b6-rule__actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.http36b6-rule__btn {
+  border: 0;
+  background: transparent;
+  color: var(--http36b6-text-muted, #5b6472);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+}
+
+.http36b6-rule__btn:hover {
+  background: var(--http36b6-surface-2, #f1f4f9);
+  color: var(--http36b6-text, #1a2230);
+}
+
+.http36b6-rule__btn--danger:hover {
+  color: var(--http36b6-error, #c3352b);
+}
+
+.http36b6-rule__grant {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: var(--http36b6-warning-bg, #fff3d6);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  color: var(--http36b6-warning-text, #8a5a00);
+}
+
+.http36b6-rule__grant-btn {
+  border: 0;
+  background: var(--http36b6-primary);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 5px 10px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.http36b6-rule__overlap {
+  font-size: 11.5px;
+  color: var(--http36b6-warning-text, #8a5a00);
+}
+
+/* ----------------------------------------------------------------- toggle */
+
+.http36b6-toggle {
+  position: relative;
+  width: 34px;
+  height: 20px;
+  flex: none;
+  border: 0;
+  border-radius: 999px;
+  background: var(--http36b6-border, #cbd5e1);
+  cursor: pointer;
+  transition: background 0.15s ease;
+  padding: 0;
+}
+
+.http36b6-toggle[aria-checked='true'] {
+  background: var(--http36b6-primary);
+}
+
+.http36b6-toggle::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.15s ease;
+}
+
+.http36b6-toggle[aria-checked='true']::after {
+  transform: translateX(14px);
+}
+
+/* ----------------------------------------------------------- upgrade card */
+
+.http36b6-upgrade-card {
+  background: var(--http36b6-surface, #fff);
+  border: 1px solid var(--http36b6-border, #e2e8f0);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.http36b6-upgrade-card__title {
+  font-weight: 800;
+  font-size: 14px;
+  margin: 0;
+}
+
+.http36b6-upgrade-card__sub {
+  font-size: 12.5px;
+  color: var(--http36b6-text-muted, #5b6472);
+  margin: 0;
+}
+
+.http36b6-upgrade-card__list {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 13px;
+}
+
+.http36b6-upgrade-card__versus {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--http36b6-surface-2, #f1f4f9);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.http36b6-upgrade-card__vs-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+}
+
+.http36b6-upgrade-card__price {
+  font-weight: 800;
+  font-size: 14px;
+  margin: 0;
+}
+
+.http36b6-upgrade-card__guar {
+  font-size: 12px;
+  color: var(--http36b6-text-muted, #5b6472);
+  margin: 0;
+}
+
+.http36b6-upgrade-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.http36b6-maybe {
+  border: 0;
+  background: transparent;
+  color: var(--http36b6-text-muted, #5b6472);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 4px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.http36b6-maybe--add {
+  align-self: flex-start;
+  text-decoration: none;
+  color: var(--http36b6-primary-dark);
+}
+
+/* ---------------------------------------------------------------- license */
+
+.http36b6-license {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.http36b6-license__row {
+  display: flex;
+  gap: 8px;
+}
+
+.http36b6-license__row .http36b6-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.http36b6-license__active {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.http36b6-license__plan {
+  font-size: 12.5px;
+  flex: 1;
+}
+
+.http36b6-hint {
+  font-size: 11.5px;
+  color: var(--http36b6-text-muted, #5b6472);
+  margin: 0;
+  min-height: 14px;
+}
+
+/* ------------------------------------------------------------------- form */
+
+.http36b6-form-title {
+  font-weight: 800;
+  font-size: 15px;
+  margin: 0;
+}
+
+.http36b6-label--headers {
+  margin-top: 4px;
+}
+
+.http36b6-hrow {
+  display: grid;
+  grid-template-columns: 84px 76px 1fr;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.http36b6-hrow__select,
+.http36b6-hrow__input {
+  font-size: 12px;
+  padding: 7px 8px;
+  border: 1px solid var(--http36b6-border, #e2e8f0);
+  border-radius: 8px;
+  background: var(--http36b6-surface, #fff);
+  color: var(--http36b6-text, #1a2230);
+  min-width: 0;
+}
+
+.http36b6-hrow__input--value {
+  grid-column: 1 / -1;
+}
+
+.http36b6-hrow__remove {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  border: 0;
+  background: transparent;
+  color: var(--http36b6-text-muted, #5b6472);
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.http36b6-hrow-wrap {
+  position: relative;
+}
+
+.http36b6-form-error {
+  font-size: 12.5px;
+  color: var(--http36b6-error, #c3352b);
+  margin: 0;
+}
+
+.http36b6-form-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+/* ---------------------------------------------------------------- paywall */
+
+.http36b6-paywall {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--http36b6-surface, #fff);
+  border: 1px solid var(--http36b6-border, #e2e8f0);
+  border-radius: 14px;
+  padding: 16px 14px;
+}
+
+.http36b6-paywall__eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--http36b6-primary-dark);
+  margin: 0;
+}
+
+.http36b6-paywall__headline {
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 0;
+}
+
+/* ------------------------------------------------------------------ misc */
+
+.http36b6-footer__pro {
+  font-weight: 700;
+}
+
+.http36b6-empty__art {
+  width: 72px;
+  height: 72px;
+  color: var(--http36b6-primary);
+}

@@ -1,0 +1,452 @@
+{
+ "extName": {
+  "message": "Zovo Headers - Modify HTTP Request and Response Headers"
+ },
+ "extDesc": {
+  "message": "Set or remove HTTP request and response headers on the sites you choose. Standing per-site rules, applied by Chrome."
+ },
+ "actionTitle": {
+  "message": "HTTP Header Rules",
+  "description": "Popup and action title."
+ },
+ "optionsTitle": {
+  "message": "HTTP Header Rules Settings",
+  "description": "Options page title."
+ },
+ "tierFree": {
+  "message": "Free",
+  "description": "Free tier badge."
+ },
+ "proBadge": {
+  "message": "Pro",
+  "description": "Pro tier badge."
+ },
+ "overlapFlag": {
+  "message": "Overlap",
+  "description": "Flag shown when two enabled rules touch the same header on overlapping sites."
+ },
+ "emptyTitle": {
+  "message": "No header rules yet",
+  "description": "Empty state title."
+ },
+ "emptyText": {
+  "message": "Set a header once. It holds on every request, every visit, until you say otherwise.",
+  "description": "Empty state body."
+ },
+ "addRule": {
+  "message": "Add a header rule",
+  "description": "Primary button that opens the rule form."
+ },
+ "addRuleAria": {
+  "message": "Add a header rule",
+  "description": "Aria label for the add rule button."
+ },
+ "nudgeTitle": {
+  "message": "All 5 free rules are live",
+  "description": "Upgrade nudge title shown at the free cap."
+ },
+ "nudgeSub": {
+  "message": "Pro lifts the cap so every project stays covered at once.",
+  "description": "Upgrade nudge subtitle."
+ },
+ "upgradeLink": {
+  "message": "See plans",
+  "description": "Nudge link to the pricing page."
+ },
+ "upgradeLinkAria": {
+  "message": "See HTTP Header Rules Pro plans",
+  "description": "Aria label for the plans link."
+ },
+ "maybeLater": {
+  "message": "Maybe later",
+  "description": "Dismisses an upgrade surface."
+ },
+ "licenseLabel": {
+  "message": "Have a Pro key?",
+  "description": "Label above the license key input."
+ },
+ "licenseInputAria": {
+  "message": "Pro license key",
+  "description": "Aria label for the license input."
+ },
+ "licenseActivate": {
+  "message": "Activate",
+  "description": "License activate button."
+ },
+ "licenseActivateAria": {
+  "message": "Activate Pro license",
+  "description": "Aria label for the license activate button. Must start with Activate."
+ },
+ "licensePlanPro": {
+  "message": "Pro active. Thank you.",
+  "description": "Shown next to the Pro badge when a license is active."
+ },
+ "licenseRemove": {
+  "message": "Remove",
+  "description": "Removes the active license."
+ },
+ "licenseRemoveAria": {
+  "message": "Remove Pro license",
+  "description": "Aria label for the license remove button."
+ },
+ "licenseInvalid": {
+  "message": "That key does not check out. Copy the whole key from your purchase email and try again.",
+  "description": "License validation failure message."
+ },
+ "licenseUnreachable": {
+  "message": "Could not reach the license server. Check your connection and try again.",
+  "description": "Shown when license verification fails because the verify endpoint is unreachable. Activation is fail-closed: no grant."
+ },
+ "licenseRemoved": {
+  "message": "Pro removed. The free limit applies again.",
+  "description": "Shown after removing Pro when nothing had to pause."
+ },
+ "licenseRemovedPaused": {
+  "message": "Pro removed. $1 rules paused to fit the free 5.",
+  "description": "Shown after removing Pro when rules were auto-paused by the cap."
+ },
+ "formTitleNew": {
+  "message": "New header rule",
+  "description": "Rule form title when creating."
+ },
+ "formTitleEdit": {
+  "message": "Edit header rule",
+  "description": "Rule form title when editing."
+ },
+ "fieldRuleName": {
+  "message": "Rule name",
+  "description": "Rule name field label."
+ },
+ "fieldRuleNamePh": {
+  "message": "Staging API headers",
+  "description": "Rule name placeholder."
+ },
+ "fieldDomain": {
+  "message": "Site domain",
+  "description": "Domain field label."
+ },
+ "domainHint": {
+  "message": "Covers the domain and all its subdomains. Chrome asks for access to this site when you save. Nothing else is touched.",
+  "description": "Hint under the domain field."
+ },
+ "fieldHeaders": {
+  "message": "Headers",
+  "description": "Header rows section label."
+ },
+ "addHeaderRow": {
+  "message": "+ Add another header",
+  "description": "Adds a header row to the form."
+ },
+ "fieldDirection": {
+  "message": "Request or response",
+  "description": "Aria label for the direction select."
+ },
+ "dirRequest": {
+  "message": "Request",
+  "description": "Direction select option."
+ },
+ "dirResponse": {
+  "message": "Response",
+  "description": "Direction select option."
+ },
+ "fieldOp": {
+  "message": "Set or remove",
+  "description": "Aria label for the operation select."
+ },
+ "opSet": {
+  "message": "Set",
+  "description": "Operation select option."
+ },
+ "opRemove": {
+  "message": "Remove",
+  "description": "Operation select option."
+ },
+ "fieldHeaderName": {
+  "message": "Header name",
+  "description": "Aria label for the header name input."
+ },
+ "fieldHeaderNamePh": {
+  "message": "x-header-name",
+  "description": "Header name placeholder."
+ },
+ "fieldHeaderValue": {
+  "message": "Header value",
+  "description": "Aria label for the header value input."
+ },
+ "fieldHeaderValuePh": {
+  "message": "value",
+  "description": "Header value placeholder."
+ },
+ "removeHeaderRow": {
+  "message": "Remove this header",
+  "description": "Aria label for removing one header row."
+ },
+ "saveRule": {
+  "message": "Save rule",
+  "description": "Save button in the rule form."
+ },
+ "saveRuleAria": {
+  "message": "Save rule and grant site access",
+  "description": "Aria label for the save button."
+ },
+ "cancel": {
+  "message": "Cancel",
+  "description": "Cancels the rule form."
+ },
+ "paywallEyebrow": {
+  "message": "You hit the free limit",
+  "description": "Paywall eyebrow line."
+ },
+ "paywallHeadline": {
+  "message": "Unlimited standing rules, live at once",
+  "description": "Paywall headline."
+ },
+ "paywallLi1": {
+  "message": "More than 5 rules live at the same time",
+  "description": "Pro benefit."
+ },
+ "paywallLi2": {
+  "message": "Every project and environment covered at once",
+  "description": "Pro benefit."
+ },
+ "paywallLi3": {
+  "message": "No toggle-dance to squeeze under the cap",
+  "description": "Pro benefit."
+ },
+ "paywallLi4": {
+  "message": "One payment unlocks this extension's Pro forever",
+  "description": "Pro benefit."
+ },
+ "paywallFreeLine": {
+  "message": "5 active rules, full engine",
+  "description": "Free tier row in the versus block."
+ },
+ "paywallProLine": {
+  "message": "Unlimited active rules",
+  "description": "Pro tier row in the versus block."
+ },
+ "upgradePrice": {
+  "message": "$$99 lifetime, not a subscription",
+  "description": "Price line. The doubled dollar sign is the i18n literal-dollar escape."
+ },
+ "upgradeGuarantee": {
+  "message": "14-day money-back guarantee.",
+  "description": "Refund guarantee line."
+ },
+ "upgradeCta": {
+  "message": "Get Pro",
+  "description": "Primary upgrade call to action."
+ },
+ "upgradeCtaAria": {
+  "message": "Get HTTP Header Rules Pro",
+  "description": "Aria label for the upgrade call to action."
+ },
+ "footerGetPro": {
+  "message": "Get Pro",
+  "description": "Footer upgrade link."
+ },
+ "footerGetProAria": {
+  "message": "Get HTTP Header Rules Pro",
+  "description": "Aria label for the footer upgrade link."
+ },
+ "capOf5": {
+  "message": "$1 of 5 rules",
+  "description": "Free tier cap indicator."
+ },
+ "capPro": {
+  "message": "$1 rules",
+  "description": "Pro tier rule counter."
+ },
+ "toggleAria": {
+  "message": "Turn rule $1 on or off",
+  "description": "Aria label for a rule toggle switch."
+ },
+ "edit": {
+  "message": "Edit",
+  "description": "Edit button on a rule card."
+ },
+ "editAria": {
+  "message": "Edit rule $1",
+  "description": "Aria label for editing a rule."
+ },
+ "delete": {
+  "message": "Delete",
+  "description": "Delete button on a rule card."
+ },
+ "deleteAria": {
+  "message": "Delete rule $1",
+  "description": "Aria label for deleting a rule."
+ },
+ "moreHeaders": {
+  "message": "+$1 more",
+  "description": "Chip showing how many headers are hidden on a rule card."
+ },
+ "overlapNote": {
+  "message": "Also touched by $1. Chrome picks one.",
+  "description": "Per-rule overlap warning naming the other rules."
+ },
+ "needsGrant": {
+  "message": "Needs site access",
+  "description": "Chip on a rule whose host access is missing."
+ },
+ "grantAccess": {
+  "message": "Grant access",
+  "description": "Button that requests host access for one rule."
+ },
+ "grantAccessAria": {
+  "message": "Grant access to $1",
+  "description": "Aria label for the grant button."
+ },
+ "dirReqShort": {
+  "message": "req",
+  "description": "Short direction label on a header chip."
+ },
+ "dirRespShort": {
+  "message": "resp",
+  "description": "Short direction label on a header chip."
+ },
+ "opSetShort": {
+  "message": "set",
+  "description": "Short operation label on a header chip."
+ },
+ "opRemoveShort": {
+  "message": "remove",
+  "description": "Short operation label on a header chip."
+ },
+ "errDomain": {
+  "message": "That domain does not look right. Try example.com or api.example.com.",
+  "description": "Form error for an invalid domain."
+ },
+ "errHeadersEmpty": {
+  "message": "Add at least one header to the rule.",
+  "description": "Form error when no header rows are filled."
+ },
+ "errHeaderName": {
+  "message": "One of those header names is not valid. Letters, digits, and dashes are safest.",
+  "description": "Form error for an invalid header name."
+ },
+ "errHeaderValue": {
+  "message": "One of those header values is not valid. Keep it to plain text.",
+  "description": "Form error for an invalid header value."
+ },
+ "errGeneric": {
+  "message": "Something about that rule does not check out. Review the fields and try again.",
+  "description": "Generic form error."
+ },
+ "importTitle": {
+  "message": "Import rules",
+  "description": "Import section title."
+ },
+ "importSub": {
+  "message": "Load a JSON file exported from this extension. Invalid files change nothing.",
+  "description": "Import section subtitle."
+ },
+ "importModeAria": {
+  "message": "Import mode",
+  "description": "Aria label for the import mode radio group."
+ },
+ "importMerge": {
+  "message": "Merge. Keep my rules; matching ids get overwritten.",
+  "description": "Merge import mode label."
+ },
+ "importReplace": {
+  "message": "Replace. Wipe everything and load the file.",
+  "description": "Replace import mode label."
+ },
+ "importFileAria": {
+  "message": "Choose a rules JSON file",
+  "description": "Aria label for the import file input."
+ },
+ "importRun": {
+  "message": "Import",
+  "description": "Import button."
+ },
+ "importRunAria": {
+  "message": "Import rules from file",
+  "description": "Aria label for the import button."
+ },
+ "importNoFile": {
+  "message": "Choose a JSON file first.",
+  "description": "Import error when no file is selected."
+ },
+ "importReadFail": {
+  "message": "Could not read that file.",
+  "description": "Import error when the file cannot be read."
+ },
+ "importOk": {
+  "message": "Imported. $1 added, $2 updated, $3 paused to fit the free 5.",
+  "description": "Import summary line."
+ },
+ "importOkShort": {
+  "message": "Import complete.",
+  "description": "Import success fallback."
+ },
+ "importErrNotJson": {
+  "message": "That file is not valid JSON.",
+  "description": "Import error."
+ },
+ "importErrBadApp": {
+  "message": "That JSON was not exported from this extension.",
+  "description": "Import error."
+ },
+ "importErrVersion": {
+  "message": "That export version is newer than this extension understands.",
+  "description": "Import error."
+ },
+ "importErrTooMany": {
+  "message": "That file holds more rules than the storage limit allows.",
+  "description": "Import error."
+ },
+ "importErrRule": {
+  "message": "Rule $1 in the file does not check out. Nothing was changed.",
+  "description": "Import error pointing at a 1-based rule position."
+ },
+ "importErrGeneric": {
+  "message": "Import failed. Nothing was changed.",
+  "description": "Generic import error."
+ },
+ "exportTitle": {
+  "message": "Export rules",
+  "description": "Export section title."
+ },
+ "exportSub": {
+  "message": "Download every rule as JSON. Export is always free and never needs a license.",
+  "description": "Export section subtitle."
+ },
+ "exportRun": {
+  "message": "Export as JSON",
+  "description": "Export button."
+ },
+ "exportRunAria": {
+  "message": "Export all rules as JSON",
+  "description": "Aria label for the export button."
+ },
+ "exportOk": {
+  "message": "Exported $1 rules.",
+  "description": "Export success line."
+ },
+ "exportFail": {
+  "message": "Export failed. Try again.",
+  "description": "Export failure line."
+ },
+ "licenseTitle": {
+  "message": "License",
+  "description": "License section title."
+ },
+ "sideProTitle": {
+  "message": "Go Pro",
+  "description": "Sidebar Pro card title."
+ },
+ "sideBrowse": {
+  "message": "Browse all tools from this studio",
+  "description": "Sidebar line linking to the studio site."
+ },
+ "sideBrowseAria": {
+  "message": "Browse all tools from this studio",
+  "description": "Aria label for the browse link."
+ },
+ "sideBrowseCta": {
+  "message": "Browse tools",
+  "description": "Sidebar browse button."
+ }
+}

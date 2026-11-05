@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="optionsTitle">HTTP Header Rules Settings</title>
+    <link rel="stylesheet" href="styles/http36b6-base.css" />
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body class="http36b6-root http36b6-options">
+    <div class="http36b6-options__layout">
+      <main class="http36b6-options__main http36b6-stack">
+        <header class="http36b6-header">
+          <img class="http36b6-header__icon" src="icons/48.png" alt="" width="28" height="28" />
+          <span class="http36b6-header__title" data-i18n="actionTitle">HTTP Header Rules</span>
+          <span id="http36b6-tier" class="http36b6-badge http36b6-badge--free" data-i18n="tierFree">Free</span>
+        </header>
+
+        <section class="http36b6-card">
+          <p class="http36b6-options__h" data-i18n="importTitle">Import rules</p>
+          <p class="http36b6-muted" data-i18n="importSub">
+            Load a JSON file exported from this extension. Invalid files change nothing.
+          </p>
+          <div class="http36b6-options__radios" role="radiogroup" aria-label="Import mode" data-i18n-aria="importModeAria">
+            <label class="http36b6-options__radio">
+              <input type="radio" name="http36b6-import-mode" value="merge" checked />
+              <span data-i18n="importMerge">Merge. Keep my rules; matching ids get overwritten.</span>
+            </label>
+            <label class="http36b6-options__radio">
+              <input type="radio" name="http36b6-import-mode" value="replace" />
+              <span data-i18n="importReplace">Replace. Wipe everything and load the file.</span>
+            </label>
+          </div>
+          <div class="http36b6-options__row">
+            <input id="http36b6-import-file" type="file" accept="application/json,.json" aria-label="Choose a rules JSON file" data-i18n-aria="importFileAria" />
+            <button id="http36b6-import-run" class="http36b6-btn http36b6-btn--primary" type="button" aria-label="Import rules from file" data-i18n-aria="importRunAria" data-i18n="importRun">
+              Import
+            </button>
+          </div>
+          <p id="http36b6-import-msg" class="http36b6-hint" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="http36b6-card">
+          <p class="http36b6-options__h" data-i18n="exportTitle">Export rules</p>
+          <p class="http36b6-muted" data-i18n="exportSub">
+            Download every rule as JSON. Export is always free and never needs a license.
+          </p>
+          <div class="http36b6-options__row">
+            <button id="http36b6-export-run" class="http36b6-btn http36b6-btn--secondary" type="button" aria-label="Export all rules as JSON" data-i18n-aria="exportRunAria" data-i18n="exportRun">
+              Export as JSON
+            </button>
+          </div>
+          <p id="http36b6-export-msg" class="http36b6-hint" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="http36b6-card">
+          <p class="http36b6-options__h" data-i18n="licenseTitle">License</p>
+          <div id="http36b6-license-form-wrap">
+            <label class="http36b6-label" for="http36b6-license-input" data-i18n="licenseLabel">Have a Pro key?</label>
+            <div class="http36b6-options__row">
+              <input
+                id="http36b6-license-input"
+                class="http36b6-input http36b6-mono"
+                type="text"
+                maxlength="24"
+                placeholder="ZOVO-XXXX-XXXX-XXXX-XXXX"
+                autocomplete="off"
+                spellcheck="false"
+                aria-label="Pro license key"
+                data-i18n-aria="licenseInputAria"
+              />
+              <button
+                id="http36b6-license-activate"
+                class="http36b6-btn http36b6-btn--secondary"
+                type="button"
+                aria-label="Activate Pro license"
+                data-i18n-aria="licenseActivateAria"
+                data-i18n="licenseActivate"
+              >
+                Activate
+              </button>
+            </div>
+          </div>
+          <div id="http36b6-license-active" class="http36b6-options__license-active" hidden>
+            <span class="http36b6-badge http36b6-badge--pro" data-i18n="proBadge">Pro</span>
+            <span data-i18n="licensePlanPro">Pro active. Thank you.</span>
+            <button id="http36b6-license-remove" class="http36b6-options__maybe" type="button" aria-label="Remove Pro license" data-i18n-aria="licenseRemoveAria" data-i18n="licenseRemove">
+              Remove
+            </button>
+          </div>
+          <p id="http36b6-license-msg" class="http36b6-hint" role="status" aria-live="polite"></p>
+        </section>
+      </main>
+
+      <aside class="http36b6-options__side">
+        <div id="http36b6-side-pro" class="http36b6-card http36b6-options__pro-card">
+          <p class="http36b6-options__h" data-i18n="sideProTitle">Go Pro</p>
+          <ul class="http36b6-options__pro-list">
+            <li data-i18n="paywallLi1">More than 5 rules live at the same time</li>
+            <li data-i18n="paywallLi2">Every project and environment covered at once</li>
+            <li data-i18n="paywallLi4">One payment unlocks this extension's Pro forever</li>
+          </ul>
+          <p class="http36b6-options__price" data-i18n="upgradePrice">$99 lifetime, not a subscription</p>
+          <p class="http36b6-muted" data-i18n="upgradeGuarantee">14-day money-back guarantee.</p>
+          <a
+            id="http36b6-side-link"
+            class="http36b6-btn http36b6-btn--pro http36b6-btn--block"
+            href="https://zovo.one/pricing?utm_source=httpheadertool&amp;utm_medium=extension&amp;utm_campaign=upgrade&amp;utm_content=sidebar"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Get HTTP Header Rules Pro"
+            data-i18n-aria="upgradeCtaAria"
+            data-i18n="upgradeCta"
+            >Get Pro</a
+          >
+        </div>
+        <div class="http36b6-card">
+          <p class="http36b6-muted http36b6-options__browse" data-i18n="sideBrowse">Browse all tools from this studio</p>
+          <a
+            id="http36b6-browse-link"
+            class="http36b6-btn http36b6-btn--ghost http36b6-btn--block"
+            href="https://zovo.one"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Browse all tools from this studio"
+            data-i18n-aria="sideBrowseAria"
+            data-i18n="sideBrowseCta"
+            >Browse tools</a
+          >
+        </div>
+      </aside>
+    </div>
+
+    <footer class="http36b6-footer http36b6-options__footer">
+      <a href="https://zovo.one" target="_blank" rel="noreferrer">zovo.one</a>
+      <span class="http36b6-mono">v1.0.1</span>
+    </footer>
+
+    <script src="options.js"></script>
+  </body>
+</html>
